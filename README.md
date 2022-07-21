@@ -8,12 +8,14 @@
        在使用OpenTelemetry-java-instrumentation上报Java应用数据之前，您需要准备以下几项工作：
 
 1.登陆应用性能观测，点击最左侧工具栏中的“探针部署”选项：
+
+
 ![image](https://user-images.githubusercontent.com/64143982/180122557-89c204e4-926a-4840-a556-f8cb272e9890.png)
 
 
                                                                               
-
 2.在右侧弹出的界面中，依次进行以下操作：
+
 
 选择部署地点以及上报应用数据所在的业务系统ID。
 选择使用语言“Java”。
