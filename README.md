@@ -9,11 +9,11 @@ OpenTelemetry是工具、API 和 SDK 的集合。使用它来检测、生成、�
 
 在使用OpenTelemetry-java-instrumentation上报Java应用数据之前，您需要准备以下几项工作：
 
-1.登陆应用性能观测，点击最左侧工具栏中的“探针部署”选项：
+1. 登陆应用性能观测，点击最左侧工具栏中的“探针部署”选项：
 
 ![image](https://user-images.githubusercontent.com/64143982/180122557-89c204e4-926a-4840-a556-f8cb272e9890.png)
 
-2.在右侧弹出的界面中，依次进行以下操作：
+2. 在右侧弹出的界面中，依次进行以下操作：
 
 * 选择部署地点以及上报应用数据所在的业务系统ID。
 
@@ -31,7 +31,7 @@ OpenTelemetry是工具、API 和 SDK 的集合。使用它来检测、生成、�
 
 ![image](https://user-images.githubusercontent.com/64143982/180122863-98f71860-47ea-4eae-946b-f11581d0585f.png)
 
-3.进入探针部署页面，获取接入点和Token信息：
+3. 进入探针部署页面，获取接入点和Token信息：
 
 ![image](https://user-images.githubusercontent.com/64143982/180122905-3a51c21b-5d22-4fe9-9f19-e748c09c8349.png)
 
@@ -51,48 +51,51 @@ PS:前置要求，如果agent是运行在容器里，需要将宿主机的/usr/o
 
 2.通过修改Java启动的VM参数上报链路数据。
 
--javaagent:/path/to/opentelemetry-javaagent.jar    //请将路径修改为您文件下载的实际地址。
--Dotel.resource.attributes=service.name=<appName>,token=<token>
--Dotel.exporter.otlp.endpoint=<endpoint>
+      -javaagent:/path/to/opentelemetry-javaagent.jar    //请将路径修改为您文件下载的实际地址。
+      -Dotel.resource.attributes=service.name=<appName>,token=<token>
+      -Dotel.exporter.otlp.endpoint=<endpoint>
 如果您选择直接上报数据，请将<token>替换成从前提条件中获取的Token，将<endpoint>替换成对应地域的Endpoint。
 
-注意：替换对应参数值时，“< >”符号需删去，仅保留文本。
+#### 注意：替换对应参数值时，“< >”符号需删去，仅保留文本。
 
 例如：
 
--javaagent:/Users/Downloads/opentelemetry-javaagent.jar
--Dotel.resource.attributes=service.name=ot-java-agent-sample,token=oSmwaUr************ZiNtSv
--Dotel.exporter.otlp.endpoint=http://ap-guangzhou.apm.tencentcs.com:4317
-注意：需要输入正确的url。
+      -javaagent:/Users/Downloads/opentelemetry-javaagent.jar
+      -Dotel.resource.attributes=service.name=ot-java-agent-sample,token=oSmwaUr************ZiNtSv
+      -Dotel.exporter.otlp.endpoint=http://ap-guangzhou.apm.tencentcs.com:4317
+#### 注意：需要输入正确的url。
 
 如果您选择使用OpenTelemetry Collector转发，则需删除-Dotel.exporter.otlp.headers=Authentication=<token>并修改<endpoint>为您本地部署的服务地址。
 
-配置项说明 #
+### 配置项说明
+   
 必填项：
 
-otel.resource.attributes=service.name :服务名,如果是spring cloud/dubbo服务，最好与其服务名保持一致
-otel.resource.attributes=token :实例token码
-otel.exporter.otlp.endpoint：实例上报地址
+      otel.resource.attributes=service.name :服务名,如果是spring cloud/dubbo服务，最好与其服务名保持一致
+      otel.resource.attributes=token :实例token码
+      otel.exporter.otlp.endpoint：实例上报地址
 
+3.启动应用。
 
-        3.启动应用。
+登录应用性能观测后，在应用列表页面选择新创建的应用，查看上报数据。
 
-       登录应用性能观测后，在应用列表页面选择新创建的应用，查看上报数据。
+### FAQ 
+#### 数据上报问题
+如果碰到平台上没有相关服务的数据上报，可以通过以下几个途径排查一下：
+      服务是否正常成功启动
+      容器内/usr/opentelemetry/agent/目录是否挂载成功，目录下是否有文件opentelemetry-javaagent.jar
+      启动参数加上-Dotel.javaagent.auditmode=true，开启debug日志，查看logs目录下的agent日志是否有异常
+## 四、查看结果
+#### 注意：当完成应用接入后，您的应用需要有数据请求接入上传后，才可以在应用性能观测页面查看到相应结果。
 
-FAQ #
-数据上报问题 #
-如果碰到平台上没有相关服务的数据上报，可以通过以下几个途径排查一下
-
-服务是否正常成功启动
-容器内/usr/opentelemetry/agent/目录是否挂载成功，目录下是否有文件opentelemetry-javaagent.jar
-启动参数加上-Dotel.javaagent.auditmode=true，开启debug日志，查看logs目录下的agent日志是否有异常
-四、查看结果
-注意：当完成应用接入后，您的应用需要有数据请求接入上传后，才可以在应用性能观测页面查看到相应结果。
-
-登入应用性能观测，点击左侧“资源管理”
-选择部署应用所在地
-单击部署的业务ID
-                                  
-
+   * 登入应用性能观测，点击左侧“资源管理”
+   * 选择部署应用所在地
+   * 单击部署的业务ID
+   
+<img width="733" alt="image" src="https://user-images.githubusercontent.com/64143982/180126269-285e4b39-8902-405b-a50c-17e72ca14e6c.png">
+ 
 最终便可以在业务所在的应用列表里看到上报的服务数据：
 
+<img width="627" alt="image" src="https://user-images.githubusercontent.com/64143982/180126317-434609c0-1c75-4f6d-8321-aa0bbc908617.png">
+
+<img width="733" alt="image" src="https://user-images.githubusercontent.com/64143982/180126269-285e4b39-8902-405b-a50c-17e72ca14e6c.png">
