@@ -22,6 +22,7 @@ OpenTelemetry是工具、API 和 SDK 的集合。使用它来检测、生成、�
 选择接入方式。“OpenTelemetry”。
 
 选择上报方式：
+
     内网上报：使用此上报方式，您的服务需运行在腾讯云VPC。通过VPC直接联通，在避免外网通信的安全风险同时，可以节省上报流量开销。
     
     外网上报：当您的服务部署在本地或非腾讯云VPC内，可以通过此方式上报数据。请注意外网通信存在安全风险，同时也会造成一定上报流量费用。
@@ -42,7 +43,7 @@ OpenTelemetry-java-instrumentation支持数十种框架自动埋点能力。更�
 
 ### 获取Java Agent
 
-打开链接Java Agent，通过命令下载对应的jar包:git clone https://github.com/TencentCloud/tencentcloud-opentelemetry-java.git下载opentelemetry-javaagent.jar：
+1.打开链接Java Agent，通过命令下载对应的jar包:git clone https://github.com/TencentCloud/tencentcloud-opentelemetry-java.git下载opentelemetry-javaagent.jar：
 
 <img width="1018" alt="image" src="https://user-images.githubusercontent.com/64143982/180123587-63f13c61-2043-4663-97d6-6dbb4841c868.png">
 
