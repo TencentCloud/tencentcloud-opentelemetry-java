@@ -25,10 +25,10 @@
                  
 3.进入探针部署页面，获取接入点和Token信息：
 ![image](https://user-images.githubusercontent.com/64143982/180122905-3a51c21b-5d22-4fe9-9f19-e748c09c8349.png)
-三、使用OpenTelemetry Java Agent自动埋点
-        OpenTelemetry-java-instrumentation支持数十种框架自动埋点能力。更多信息，请参见OpenTelemetry官方文档。
 
-       获取Java Agent
+三、使用OpenTelemetry Java Agent自动埋点
+OpenTelemetry-java-instrumentation支持数十种框架自动埋点能力。更多信息，请参见OpenTelemetry官方文档。
+获取Java Agent
 打开链接Java Agent，通过命令下载对应的jar包:git clone https://github.com/TencentCloud/tencentcloud-opentelemetry-java.git下载opentelemetry-javaagent.jar：
 
 
