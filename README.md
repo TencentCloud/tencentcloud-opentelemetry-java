@@ -22,7 +22,7 @@
     自研VPC上报：如果您的服务运行在腾讯自研VPC内，推荐使用此上报方式。自研网络内部直接上报，规避安全风险同时获得高数据通信效率。
 点击“下一步，开始部署”。
 ![image](https://user-images.githubusercontent.com/64143982/180122863-98f71860-47ea-4eae-946b-f11581d0585f.png)
-                 
+
 3.进入探针部署页面，获取接入点和Token信息：
 ![image](https://user-images.githubusercontent.com/64143982/180122905-3a51c21b-5d22-4fe9-9f19-e748c09c8349.png)
 
