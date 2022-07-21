@@ -41,7 +41,7 @@ OpenTelemetry-java-instrumentation支持数十种框架自动埋点能力。更�
 
 ### 获取Java Agent
 
-1.打开链接Java Agent，通过命令下载对应的jar包:git clone https://github.com/TencentCloud/tencentcloud-opentelemetry-java.git下载opentelemetry-javaagent.jar：
+1.打开链接Java Agent，通过命令下载对应的jar包:git clone https://github.com/TencentCloud/tencentcloud-opentelemetry-java.git  下载opentelemetry-javaagent.jar：
 
 <img width="1018" alt="image" src="https://user-images.githubusercontent.com/64143982/180123587-63f13c61-2043-4663-97d6-6dbb4841c868.png">
 
