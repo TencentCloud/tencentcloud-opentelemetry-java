@@ -3,16 +3,18 @@
    Java Agent基于字节码增强技术研发，支持自动埋点完成数据上报，Java Agent包含(并二次分发)opentelemetry-java-instrumentation CNCF的开源代码，遵循Apache License 2.0协议，在Java Agent包中对opentelemetry License进行了引用。
 
 ### 说明：
-   OpenTelemetry是工具、API 和 SDK 的集合。使用它来检测、生成、收集和导出遥测数据（指标、日志和跟踪），以帮助您分析软件的性能和行为。OpenTelemetry社区活跃，技术更迭迅速，广泛兼容主流编程语言、组件与框架，为云原生微服务以及容器架构的链路追踪能力广受欢迎。通过对Java字节码的增强技术OpenTelemetry-java-instrumentation可以实现自动埋点上报数据,且腾讯云APM基于OpenTelemetry-java-instrumentation进行二次开发,可以让您拿到更完善的调用琏数据及其对应的行号信息, 本文将通过相关操作在腾讯云平台上使用OpenTelemetry-java-instrumentation上报Java应用数据。
+OpenTelemetry是工具、API 和 SDK 的集合。使用它来检测、生成、收集和导出遥测数据（指标、日志和跟踪），以帮助您分析软件的性能和行为。OpenTelemetry社区活跃，技术更迭迅速，广泛兼容主流编程语言、组件与框架，为云原生微服务以及容器架构的链路追踪能力广受欢迎。通过对Java字节码的增强技术OpenTelemetry-java-instrumentation可以实现自动埋点上报数据,且腾讯云APM基于OpenTelemetry-java-instrumentation进行二次开发,可以让您拿到更完善的调用琏数据及其对应的行号信息, 本文将通过相关操作在腾讯云平台上使用OpenTelemetry-java-instrumentation上报Java应用数据。
 
 ## 二、前置工作
 
 在使用OpenTelemetry-java-instrumentation上报Java应用数据之前，您需要准备以下几项工作：
+
 1.登陆应用性能观测，点击最左侧工具栏中的“探针部署”选项：
 
 ![image](https://user-images.githubusercontent.com/64143982/180122557-89c204e4-926a-4840-a556-f8cb272e9890.png)
 
 2.在右侧弹出的界面中，依次进行以下操作：
+
 选择部署地点以及上报应用数据所在的业务系统ID。
 选择使用语言“Java”。
 选择接入方式。“OpenTelemetry”。
@@ -33,14 +35,15 @@
 
 OpenTelemetry-java-instrumentation支持数十种框架自动埋点能力。更多信息，请参见OpenTelemetry官方文档。
 
-获取Java Agent
+### 获取Java Agent
+
 打开链接Java Agent，通过命令下载对应的jar包:git clone https://github.com/TencentCloud/tencentcloud-opentelemetry-java.git下载opentelemetry-javaagent.jar：
 
 <img width="1018" alt="image" src="https://user-images.githubusercontent.com/64143982/180123587-63f13c61-2043-4663-97d6-6dbb4841c868.png">
 
 PS:前置要求，如果agent是运行在容器里，需要将宿主机的/usr/opentelemetry/agent/目录挂载至容器内，数据才能上报成功
 
-使用方式：
+### 使用方式：
 
 2.通过修改Java启动的VM参数上报链路数据。
 
