@@ -81,10 +81,12 @@ PS:前置要求，如果agent是运行在容器里，需要将宿主机的/usr/o
 
 ### FAQ 
 #### 数据上报问题
+   
 如果碰到平台上没有相关服务的数据上报，可以通过以下几个途径排查一下：
-      服务是否正常成功启动
-      容器内/usr/opentelemetry/agent/目录是否挂载成功，目录下是否有文件opentelemetry-javaagent.jar
-      启动参数加上-Dotel.javaagent.auditmode=true，开启debug日志，查看logs目录下的agent日志是否有异常
+
+      * 服务是否正常成功启动
+      * 容器内/usr/opentelemetry/agent/目录是否挂载成功，目录下是否有文件opentelemetry-javaagent.jar
+      * 启动参数加上-Dotel.javaagent.auditmode=true，开启debug日志，查看logs目录下的agent日志是否有异常
 ## 四、查看结果
 #### 注意：当完成应用接入后，您的应用需要有数据请求接入上传后，才可以在应用性能观测页面查看到相应结果。
 
@@ -97,5 +99,3 @@ PS:前置要求，如果agent是运行在容器里，需要将宿主机的/usr/o
 最终便可以在业务所在的应用列表里看到上报的服务数据：
 
 <img width="627" alt="image" src="https://user-images.githubusercontent.com/64143982/180126317-434609c0-1c75-4f6d-8321-aa0bbc908617.png">
-
-<img width="733" alt="image" src="https://user-images.githubusercontent.com/64143982/180126269-285e4b39-8902-405b-a50c-17e72ca14e6c.png">
