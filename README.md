@@ -86,7 +86,7 @@ PS:前置要求，如果agent是运行在容器里，需要将宿主机的/usr/o
 
        服务是否正常成功启动
        容器内/usr/opentelemetry/agent/目录是否挂载成功，目录下是否有文件opentelemetry-javaagent.jar
-       启动参数加上-Dotel.javaagent.auditmode=true，开启debug日志，查看logs目录下的agent日志是否有异常
+       启动参数加上-Dotel.javaagent.debug=true，开启debug日志，查看agent日志是否有异常
 ## 四、查看结果
 #### 注意：当完成应用接入后，您的应用需要有数据请求接入上传后，才可以在应用性能观测页面查看到相应结果。
 
