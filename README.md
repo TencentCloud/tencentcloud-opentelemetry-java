@@ -9,31 +9,29 @@ OpenTelemetry是工具、API 和 SDK 的集合。使用它来检测、生成、�
 
 在使用OpenTelemetry-java-instrumentation上报Java应用数据之前，您需要准备以下几项工作：
 
-1. 登陆应用性能观测，点击最左侧工具栏中的“探针部署”选项：
+1. 登陆应用性能观测，点击最左侧工具栏中的“应用监控”选项，再点击“接入应用”：
 
-![image](https://user-images.githubusercontent.com/64143982/180122557-89c204e4-926a-4840-a556-f8cb272e9890.png)
+<img width="647" alt="1" src="https://github.com/TencentCloud/tencentcloud-opentelemetry-java/assets/64143982/63d59152-d6fd-4936-adbb-02f2f0ac62c1">
+
 
 2. 在右侧弹出的界面中，依次进行以下操作：
 
-* 选择部署地点以及上报应用数据所在的业务系统ID。
-
 * 选择使用语言“Java”。
+<img width="634" alt="2" src="https://github.com/TencentCloud/tencentcloud-opentelemetry-java/assets/64143982/64c40901-f96d-4937-8b2e-e4b278f09e17">
 
-* 选择接入方式。“OpenTelemetry”。
 
-* 选择上报方式：
+* 选择接入方式--OpenTelemetry，以及上报方式。
+<img width="721" alt="3" src="https://github.com/TencentCloud/tencentcloud-opentelemetry-java/assets/64143982/96041e6f-ec31-4d7d-ab26-d2db617548f4">
+
 
       内网上报：使用此上报方式，您的服务需运行在腾讯云VPC。通过VPC直接联通，在避免外网通信的安全风险同时，可以节省上报流量开销。
       外网上报：当您的服务部署在本地或非腾讯云VPC内，可以通过此方式上报数据。请注意外网通信存在安全风险，同时也会造成一定上报流量费用。
       自研VPC上报：如果您的服务运行在腾讯自研VPC内，推荐使用此上报方式。自研网络内部直接上报，规避安全风险同时获得高数据通信效率
 
-* 点击“下一步，开始部署”:
 
-![image](https://user-images.githubusercontent.com/64143982/180122863-98f71860-47ea-4eae-946b-f11581d0585f.png)
+3. 获取接入点和Token信息：
+<img width="492" alt="4" src="https://github.com/TencentCloud/tencentcloud-opentelemetry-java/assets/64143982/2706b901-3f9c-4f90-bf6b-6779b70569b7">
 
-3. 进入探针部署页面，获取接入点和Token信息：
-
-![image](https://user-images.githubusercontent.com/64143982/180122905-3a51c21b-5d22-4fe9-9f19-e748c09c8349.png)
 
 ## 三、使用OpenTelemetry Java Agent自动埋点
 
@@ -90,12 +88,11 @@ PS:前置要求，如果agent是运行在容器里，需要将宿主机的/usr/o
 ## 四、查看结果
 #### 注意：当完成应用接入后，您的应用需要有数据请求接入上传后，才可以在应用性能观测页面查看到相应结果。
 
-    登入应用性能观测，点击左侧“资源管理”
-    选择部署应用所在地
-    单击部署的业务ID
+    登入应用性能观测，点击左侧“应用监控”
+    选择部署应用所在地域
+    单击部署的业务系统ID
    
-<img width="733" alt="image" src="https://user-images.githubusercontent.com/64143982/180126269-285e4b39-8902-405b-a50c-17e72ca14e6c.png">
  
 最终便可以在业务所在的应用列表里看到上报的服务数据：
 
-<img width="627" alt="image" src="https://user-images.githubusercontent.com/64143982/180126317-434609c0-1c75-4f6d-8321-aa0bbc908617.png">
+<img width="786" alt="6" src="https://github.com/TencentCloud/tencentcloud-opentelemetry-java/assets/64143982/26bee8ad-4666-42a4-8d1f-2f26757441dd">
