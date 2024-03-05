@@ -47,7 +47,7 @@ PS:前置要求，如果agent是运行在容器里，需要将宿主机的/usr/o
 
 ### 使用方式：
 
-2.通过修改Java启动的VM参数上报链路数据。
+2.通过修改Java启动的VM参数上报链路数据
 
       -javaagent:/path/to/opentelemetry-javaagent.jar    //请将路径修改为您文件下载的实际地址。
       -Dotel.resource.attributes=service.name=<appName>,token=<token>
@@ -73,7 +73,7 @@ PS:前置要求，如果agent是运行在容器里，需要将宿主机的/usr/o
       otel.resource.attributes=token :实例token码
       otel.exporter.otlp.endpoint：实例上报地址
 
-3.启动应用。
+3.启动应用
 
 登录应用性能观测后，在应用列表页面选择新创建的应用，查看上报数据。
 
